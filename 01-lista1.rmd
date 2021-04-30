@@ -1,0 +1,36 @@
+---
+title: "Lista 1 - VED"
+output: pdf_document
+---
+
+## SME0803 - Visualização e Exploração de Dados
+
+4. Calcular e representar corretamente de acordo com as regras vistas em aula
+
+a. $58,385 + 4,0 $
+b. $2947,472 - 5,3 $
+c. $\log (57,93 * 0,001) $
+d. $583,574 / 472,01 $
+
+```{r}
+# consultar a documentação da função utilizada para arredondar
+?signif
+
+# utilização
+signif(pi, 6)
+
+```
+
+6*. Leitura dos dados da companhia
+
+```{r}
+
+# lendo o arquivo .csv presente no diretorio do projeto
+dados <- read.csv("CompanhiaMB.csv")
+
+View(dados)
+
+summary(dados)
+
+```
+
