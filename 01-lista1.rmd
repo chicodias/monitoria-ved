@@ -32,5 +32,7 @@ View(dados)
 
 summary(dados)
 
-```
+names(dados)
 
+```
+As variaveis do banco de dados são: "funcionario"  "estado_civil" "instrucao"    "nfilhos"      "salario" "idade_anos"   "idade_meses"  "regiao" 
