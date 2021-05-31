@@ -5,3 +5,5 @@ dados <- read.csv("CompanhiaMB.csv")
 View(dados)
 
 summary(dados)
+
+table(dados$estado_civil)
