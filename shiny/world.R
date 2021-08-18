@@ -3,19 +3,21 @@ library(leaflet)
 library(spData)
 library(tidyverse)
 
-dados <- world
+dados <- read_csv(...)
+
+sf <- world %>% select(name_long, geom)
+
+dados <- left_join(world, dados, by = c("name_long" = "county_name"), keep)
+
 
 escolhas <- c("pop", "area_km2","lifeExp", "gdpPercap")
 palhetas <- c("Reds", "Blues", "YlOrRd", "YlOrBlu")
 
 ui <- fluidPage(
-  sidebarPanel(
     selectInput("var", "escolha a variavel", escolhas),
     selectInput("pal", "escolha a palheta", palhetas),
-    numericInput("bins", "quantidade de classes", value = 5, min = 4, max = 8)
-  ),
-  mainPanel(
-  leafletOutput("mapa"))
+    numericInput("bins", "quantidade de classes", value = 5, min = 4, max = 8),
+  leafletOutput("mapa")
 )
 
 server <- function(input, output, session) {
